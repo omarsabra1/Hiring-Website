@@ -41,3 +41,7 @@ def profile_edit(request):
         userform=UserForm(instance=request.user)
         profileform=ProfileForm(instance=profile)
     return  render(request,'accounts/profile_edit.html',{'userform':userform,'profileform':profileform})
+
+
+def log_out(request):
+    pass

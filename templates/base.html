@@ -61,14 +61,20 @@
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                                <div class="Appointment">
+                                <div class ="Appointment">
                                         {% if request.user.is_authenticated %}
                                                 <div class="phone_num d-none d-xl-block">
-                                                    <a href="{% url 'accounts:profile' %}">Profile</a>
+                                                    <a href="{% url 'accounts:profile' %}">{{ user.first_name}}</a>
+                                                </div>
+                                               <div class="phone_num d-none d-xl-block text-red">
+                                                    <a  href="{% url 'logout' %}">Sign Out</a>
                                                 </div>
                                         {% else %}
                                                 <div class="phone_num d-none d-xl-block">
                                                     <a href="{% url 'login' %}">Log in</a>
+                                                </div>
+                                              <div class="phone_num d-none d-xl-block">
+                                                    <a href="{% url 'accounts:signup' %}">Sign up</a>
                                                 </div>
                                         {% endif %}
                                     <div class="d-none d-lg-block">
