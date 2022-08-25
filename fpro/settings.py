@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'rest_framework',
     #my apps
     'job',
-    'home',
     'contact',
     'blog',
 ]

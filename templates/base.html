@@ -53,8 +53,7 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="/">home</a></li>
-                                            <li><a href="{% url 'jobs:job_list' %}">Browse Job</a></li>
+                                            <li><a href="{% url 'jobs:job_list' %}">home</a></li>
                                             <li><a href="{% url 'contact:contact' %}">Contact</a></li>
                                         </ul>
                                     </nav>
@@ -109,35 +108,12 @@
                                     <img src="img/logo.png" alt="">
                                 </a>
                             </div>
-                            <p>
-                                finloan@support.com <br>
-                                +10 873 672 6782 <br>
-                                600/D, Green road, NewYork
-                            </p>
-                            <div class="socail_links">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
+                            <div>
+                                <h3 class="footer_title">
+                            <a href="{% url 'contact:contact' %}">Contact us</a>
+                            </h3>
                             </div>
+
 
                         </div>
                     </div>
@@ -148,6 +124,7 @@
                             </h3>
                             <ul>
                                 <li><a href="#">About </a></li>
+
                                 <li><a href="#"> Pricing</a></li>
                                 <li><a href="#">Carrier Tips</a></li>
                                 <li><a href="#">FAQ</a></li>
@@ -161,10 +138,9 @@
                                 Category
                             </h3>
                             <ul>
-                                <li><a href="#">Design & Art</a></li>
-                                <li><a href="#">Engineering</a></li>
-                                <li><a href="#">Sales & Marketing</a></li>
-                                <li><a href="#">Finance</a></li>
+                                {% for cat in category %}
+                                <li><a href="#">{{cat}}</a></li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-from .models import Job
+from .models import Job,Category
 from django.core.paginator import Paginator
 from django.shortcuts import redirect,reverse
 from .form import ApplyForm,AddForm
@@ -8,6 +8,7 @@ from .filters import JobFilter
 # Create your views here.
 def job_list(request):
     job_list=Job.objects.all()
+    category=Category.objects.all()
     #filters
     my_filter=JobFilter(request.GET,queryset=job_list)
     job_list=my_filter.qs
@@ -16,7 +17,7 @@ def job_list(request):
     paginator = Paginator(job_list, 3)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    context={'jobs':page_obj,'myfilter':my_filter}
+    context={'jobs':page_obj,'myfilter':my_filter,'category':category}
     return render(request,'job\job_List.html',context)
 
 def job_detail(request,slug):

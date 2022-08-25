@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from django.conf import settings 
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
+    path('', include('job.urls',namespace='home')),
     path('accounts/', include('accounts.urls',namespace='accounts')),
     path('admin/', admin.site.urls),
     path('jobs/',include('job.urls',namespace='jobs')),

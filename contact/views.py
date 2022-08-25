@@ -15,4 +15,4 @@ def send_massege(request):
             settings.EMAIL_HOST_USER,
             [email],
         )
-    return render(request,'contact/contact.html',{'myinfo':myinfo})
+    return render(request,'contact/contact.html', {'my_info':myinfo})
